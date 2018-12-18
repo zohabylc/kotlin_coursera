@@ -2,6 +2,7 @@ package games.game2048
 
 import board.Cell
 import board.Direction
+import board.Direction.*
 import board.GameBoard
 import board.createGameBoard
 import games.game.Game
@@ -55,10 +56,20 @@ fun GameBoard<Int?>.addNewValue(initializer: Game2048Initializer<Int>) {
  * Return 'true' if the values were moved and 'false' otherwise.
  */
 fun GameBoard<Int?>.moveValuesInRowOrColumn(rowOrColumn: List<Cell>): Boolean {
-    val result = rowOrColumn.moveAndMergeEqual { value ->
-        this[value] = 2 * this[value]!!
-        value
+    val data = mutableListOf<Int?>()
+
+    for(cell in rowOrColumn){
+        data.add(this[cell])
     }
+
+    val result = data.moveAndMergeEqual { it+it }
+
+    for((key, value) in rowOrColumn.withIndex()){
+        if(key < result.size) this[value] = result[key]
+        else this[value] = null
+    }
+
+    return data.size != result.size
 }
 
 /*
@@ -69,5 +80,14 @@ fun GameBoard<Int?>.moveValuesInRowOrColumn(rowOrColumn: List<Cell>): Boolean {
  * Return 'true' if the values were moved and 'false' otherwise.
  */
 fun GameBoard<Int?>.moveValues(direction: Direction): Boolean {
-    TODO()
+
+
+    val listOrColumn = when(direction){
+        UP ->  this.getRow(1, 1..width)
+        DOWN ->  this.getRow(width, 1..width)
+        LEFT ->  this.getColumn( 1..width, 1)
+        RIGHT ->  this.getColumn( 1..width, width)
+    }
+
+    return moveValuesInRowOrColumn(listOrColumn)
 }

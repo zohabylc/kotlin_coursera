@@ -2,6 +2,10 @@
 <project version="4">
   <component name="StudySettings">
     <StudyTaskManager>
+      <option name="VERSION" value="11" />
+      <option name="myUserTests">
+        <map />
+      </option>
       <option name="course">
         <Course>
           <option name="authors">
@@ -176,7 +180,7 @@
                                       </option>
                                       <option name="initializedFromDependency" value="false" />
                                       <option name="length" value="118" />
-                                      <option name="offset" value="1227" />
+                                      <option name="offset" value="1252" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="" />
@@ -197,8 +201,8 @@
                                         </MyInitialState>
                                       </option>
                                       <option name="initializedFromDependency" value="false" />
-                                      <option name="length" value="117" />
-                                      <option name="offset" value="1813" />
+                                      <option name="length" value="335" />
+                                      <option name="offset" value="1838" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="" />
@@ -219,12 +223,12 @@
                                         </MyInitialState>
                                       </option>
                                       <option name="initializedFromDependency" value="false" />
-                                      <option name="length" value="6" />
-                                      <option name="offset" value="2271" />
+                                      <option name="length" value="274" />
+                                      <option name="offset" value="2516" />
                                       <option name="placeholderDependency" />
                                       <option name="placeholderText" value="TODO()" />
                                       <option name="possibleAnswer" value="" />
-                                      <option name="selected" value="false" />
+                                      <option name="selected" value="true" />
                                       <option name="status" value="Unchecked" />
                                       <option name="studentAnswer" />
                                       <option name="useLength" value="true" />
@@ -715,10 +719,6 @@
             </list>
           </option>
         </Course>
-      </option>
-      <option name="VERSION" value="11" />
-      <option name="myUserTests">
-        <map />
       </option>
     </StudyTaskManager>
   </component>
